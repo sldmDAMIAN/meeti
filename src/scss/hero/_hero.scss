@@ -1,0 +1,27 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.hero {
+    min-height: 60rem;
+    background-image: linear-gradient(to right, rgb(0 0 0 / 0), rgb(0 0 0 / 0)), -webkit-image-set(url(../img/hero.avif) 1x, url(../img/hero.webp) 1x, url(../img/hero.jpg) 1x);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &__texto {
+        max-width: 60rem;
+        color: v.$blanco;
+        padding: 4rem
+    }
+
+    &__enlace {
+        @include m.boton(v.$terciario, v.$blanco);
+    }
+}
